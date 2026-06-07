@@ -6,7 +6,7 @@
 
 **Issue:** https://github.com/project-robius/robrix/issues/592
 
-**Status:** Phase I in progress
+**Status:** Phase I complete
 
 ---
 
