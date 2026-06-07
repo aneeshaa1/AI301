@@ -12,8 +12,6 @@
 
 ## Why I Chose This Issue
 
-[1-2 paragraphs explaining why this issue interests you, how it matches your skills/learning goals, what you hope to learn]
-
 I chose issue #592 "Make invited room behavior prettier and sleeker" because 
 it aligns with my interest in design and although I do not have experience with Rust, it is something I would like to learn. The issue is labeled "good first issue" and has 
 a clear list of what needs to be done.
