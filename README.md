@@ -1,8 +1,11 @@
 # Contribution [#]: [Issue Title]
 
-**Contribution Number:** 1 
+**Contribution Number:** 1
+
 **Student:** Aneesha Acharya
-**Issue:** (https://github.com/project-robius/robrix/issues/592) 
+
+**Issue:** (https://github.com/project-robius/robrix/issues/592)
+
 **Status:** Phase I in progress
 
 ---
