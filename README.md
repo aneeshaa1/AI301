@@ -1,10 +1,10 @@
-# Contribution [#]: [Issue Title]
+# Contribution 1: Make invited room behavior prettier and sleeker
 
 **Contribution Number:** 1
 
 **Student:** Aneesha Acharya
 
-**Issue:** (https://github.com/project-robius/robrix/issues/592)
+**Issue:** https://github.com/project-robius/robrix/issues/592
 
 **Status:** Phase I in progress
 
@@ -13,6 +13,15 @@
 ## Why I Chose This Issue
 
 [1-2 paragraphs explaining why this issue interests you, how it matches your skills/learning goals, what you hope to learn]
+
+I chose issue #592 "Make invited room behavior prettier and sleeker" because 
+it aligns with my interest in design and although I do not have experience with Rust, it is something I would like to learn. The issue is labeled "good first issue" and has 
+a clear list of what needs to be done.
+
+I'm interested in this because:
+1. I left a comment to claim this issue and someone confirmed that it is still open.
+2. There are clear instructions on how to run the project and there are resources to learn more about the app.
+3. I want to learn how to use Rust.
 
 ---
 
