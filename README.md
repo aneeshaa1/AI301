@@ -82,7 +82,7 @@ Observed result:
 ### Reproduction Evidence
 
 - **Commit showing reproduction:** [Link to commit in your fork]
-- **Screenshots/logs:** [If applicable]
+- **Screenshots/logs:** <img width="2549" height="1221" alt="image" src="https://github.com/user-attachments/assets/10f45506-7ed7-4794-a813-36e681eca340" />
 - **My findings:** [What you discovered during reproduction]
 
 ---
