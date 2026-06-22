@@ -6,7 +6,7 @@
 
 **Issue:** https://github.com/project-robius/robrix/issues/592
 
-**Status:** Phase II complete
+**Status:** Phase III complete
 
 ---
 
@@ -163,15 +163,25 @@ When the InviteScreen is shown, the Join button should read "Join Room" with an 
 
 ### Manual Testing
 
-[What you tested manually and results]
+- cargo build succeeds (verified — first fix commit compiles after adding mut to the accept_button binding).
+- cargo clippy --workspace --all-features is warning-free (matches CI)
+- Live test via cargo run --release with a second Matrix account sending an invite:
+- On invite display: Join button shows the enter-room icon, enabled, "Join Room".
+- On click (Shift-click to skip the confirm modal): text → "Joining...".
+- On success: green checkmark + "✅ Joined!".
+- Regression: a failed join (JoinRoomResultAction::Failed) resets the button to the enabled "Join Room" state with the enter-room icon.
 
 ---
 
 ## Implementation Notes
 
-### Week [X] Progress
+### Week 3 Progress
 
-[What you built this week, challenges faced, decisions made]
+- Located the InviteScreen feature (all in src/home/invite_screen.rs) and traced the four UX gaps to specific lines: the static icon in the DSL (line 168), the icon never being updated in the match self.invite_state block in draw_walk, and the LeaveRoomResultAction::Left handler not closing the tab.
+- Reproduced the current behavior with a two-account invite setup; confirmed the join button shows a checkmark before joining and no spinner while joining.
+- First fix commit (stateful icon): swapped the default icon to ICON_JOIN_ROOM and added per-state icon updates via script_apply_eval! (enter-room icon while waiting; ICON_CHECKMARK + COLOR_FG_ACCEPT_GREEN on "✅ Joined!").
+- Challenge: script_apply_eval! failed to compile with E0596 (cannot borrow as mutable) because it mutably borrows the widget ref, unlike set_text/set_enabled. Resolved by changing let accept_button → let mut accept_button at line 457.
+- Decision: scoped this first commit to the icon only — deferred the spinner and the auto-close-on-Left to separate commits, since the spinner needs a new BouncingDots widget in the DSL and the auto-close crosses the widget→App boundary (riskier, needs a design choice).
 
 ### Week [Y] Progress
 
@@ -179,8 +189,10 @@ When the InviteScreen is shown, the Join button should read "Join Room" with an 
 
 ### Code Changes
 
-- **Files modified:** [List]
-- **Key commits:** [Links to important commits]
+- **Files modified:**
+  - src/homw/invite_screen.rs
+- **Key commits:** 
+  - https://github.com/project-robius/robrix/commit/b083dd9097a947bab58b04a03433c97e6a453e1f
 - **Approach decisions:** [Why you chose certain approaches]
 
 ---
