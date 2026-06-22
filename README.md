@@ -74,17 +74,17 @@ When someone invites you to a Matrix room, Robrix shows an InviteScreen with the
 - Click Join Room and watch the button during the join.
 - Separately, open another invite and click Reject Invite; watch what happens to the tab.
 
-Observed result:
-- The Join button shows a checkmark icon even before joining (step 4).
-- No spinner appears while joining; only the text changes to "Joining..." (step 5).
-- After rejecting, the room tab does not auto-close (step 6).
 
 ### Reproduction Evidence
 
 - **Commit showing reproduction:** [Link to commit in your fork]
 - **Screenshots/logs:** <img width="2549" height="1221" alt="image" src="https://github.com/user-attachments/assets/10f45506-7ed7-4794-a813-36e681eca340" />
-- **My findings:** [What you discovered during reproduction]
+<img width="1893" height="974" alt="image" src="https://github.com/user-attachments/assets/fd4968a5-a421-40ea-be7b-01854d42e30e" />
 
+- **My findings:**
+- The Join button shows a checkmark icon even before joining (step 4).
+- No spinner appears while joining; only the text changes to "Joining..." (step 5).
+- After rejecting, the room tab does not auto-close (step 6).
 ---
 
 ## Solution Approach
