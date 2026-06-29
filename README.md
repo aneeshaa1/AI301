@@ -6,7 +6,7 @@
 
 **Issue:** https://github.com/project-robius/robrix/issues/592
 
-**Status:** Phase III complete
+**Status:** Phase IV in progress
 
 ---
 
@@ -183,31 +183,43 @@ When the InviteScreen is shown, the Join button should read "Join Room" with an 
 - Challenge: script_apply_eval! failed to compile with E0596 (cannot borrow as mutable) because it mutably borrows the widget ref, unlike set_text/set_enabled. Resolved by changing let accept_button → let mut accept_button at line 457.
 - Decision: scoped this first commit to the icon only — deferred the spinner and the auto-close-on-Left to separate commits, since the spinner needs a new BouncingDots widget in the DSL and the auto-close crosses the widget→App boundary (riskier, needs a design choice).
 
-### Week [Y] Progress
+### Week 4 Progress
 
-[Continue documenting as you work]
+- loading spinner — added a BouncingDots spinner in a disabled-button-style frame that replaces the Join button while joining ("Joining...").
+- auto-close on leave — added a close_room helper in App so rejecting an invite (or leaving any room) closes its tab and removes it from the list automatically.
 
 ### Code Changes
 
 - **Files modified:**
-  - src/homw/invite_screen.rs
+  - src/home/invite_screen.rs
+  - src/app.rs
 - **Key commits:** 
   - https://github.com/project-robius/robrix/commit/b083dd9097a947bab58b04a03433c97e6a453e1f
+  - https://github.com/project-robius/robrix/pull/951/commits/897d17e7e6a1932c2c957243ca5eec4d40d1ac6a
+  - https://github.com/project-robius/robrix/pull/951/commits/25e7941873dda2b2f1bc81669d25055fc22a37bc
+  - https://github.com/project-robius/robrix/pull/951/commits/28961eb5e3eccbb7850dec4efc4968bd07f7d605
 - **Approach decisions:** [Why you chose certain approaches]
 
 ---
 
 ## Pull Request
 
-**PR Link:** [GitHub PR URL when submitted]
+**PR Link:** https://github.com/project-robius/robrix/pull/951
 
-**PR Description:** [Draft or final PR description - much of the content above can be adapted]
+**PR Description:** 
+Closes #592
+
+A few UX touch-ups to the invite screen:
+
+Enter-room icon on the Join button when an invite shows (was a static checkmark), and a green "✅ Joined!" once you're in.
+Loading spinner while joining — the button swaps out for a "Joining..." spinner so there's actual feedback.
+Auto-close the tab when a room is left, so rejecting an invite (or leaving any room) cleans itself up instead of leaving a dead tab around.
 
 **Maintainer Feedback:**
 - [Date]: [Summary of feedback received]
 - [Date]: [How you addressed it]
 
-**Status:** [Awaiting review / Iterating / Approved / Merged]
+**Status:** [**Awaiting review** / Iterating / Approved / Merged]
 
 ---
 
@@ -215,7 +227,8 @@ When the InviteScreen is shown, the Join button should read "Join Room" with an 
 
 ### Technical Skills Gained
 
-[What you learned technically]
+- this was my first time working with Rust
+- this was also my first time using Claude Code 
 
 ### Challenges Overcome
 
@@ -223,12 +236,13 @@ When the InviteScreen is shown, the Join button should read "Join Room" with an 
 
 ### What I'd Do Differently Next Time
 
-[Reflection on your process]
+- Next time, I would try working at a faster pace
 
 ---
 
 ## Resources Used
 
+- https://matrix.org/
 - [Link to helpful documentation]
 - [Tutorial or Stack Overflow post that helped]
 - [GitHub issues or discussions that helped]
